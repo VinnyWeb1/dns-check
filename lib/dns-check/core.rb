@@ -19,7 +19,6 @@ module DNSCheck
     def is_hostname_sane? hostname
       raise DNSCheck::DomainError, "Specify a correct domain name format!"\
         if IPAddress.valid? hostname\
-          or (Float(hostname) != nil rescue false)\
           or !PublicSuffix.valid? hostname
     end
 
